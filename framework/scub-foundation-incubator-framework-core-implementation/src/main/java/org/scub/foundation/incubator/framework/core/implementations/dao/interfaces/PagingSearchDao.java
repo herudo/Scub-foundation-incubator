@@ -2,8 +2,8 @@ package org.scub.foundation.incubator.framework.core.implementations.dao.interfa
 
 import java.util.List;
 
-import org.scub.foundation.framework.base.paging.RemotePagingCriteriasDto;
 import org.scub.foundation.framework.core.model.BaseModel;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.RemotePagingCriteriasDto;
 
 /**
  * Dao for paging search.

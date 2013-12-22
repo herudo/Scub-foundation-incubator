@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.scub.foundation.framework.base.dto.AbstractDto;
-import org.scub.foundation.framework.base.paging.RemotePagingCriteriasDto;
 import org.scub.foundation.framework.core.model.BaseModel;
 import org.scub.foundation.incubator.framework.core.implementations.dao.interfaces.CrudDao;
 import org.scub.foundation.incubator.framework.core.implementations.utils.ErrorMessages;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.RemotePagingCriteriasDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.RemotePagingResultsDto;
 
 /**

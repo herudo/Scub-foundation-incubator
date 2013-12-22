@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "../database.dtd">
+<dataset>
+	<PERSONNE_TYPE ID="1" LABEL="Normal" VERSION="0" />
+	<PERSONNE_TYPE ID="2" LABEL="VIP" VERSION="0" />
+	<PERSONNE_TYPE ID="3" LABEL="Unknown" VERSION="0" />
+</dataset>

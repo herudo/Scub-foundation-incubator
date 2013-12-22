@@ -2,7 +2,7 @@ package org.scub.foundation.incubator.framework.core.implementations.dao.impleme
 
 import java.util.List;
 
-import org.scub.foundation.framework.base.paging.RemotePagingCriteriasDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.RemotePagingCriteriasDto;
 import org.scub.foundation.incubator.framework.core.implementations.dao.interfaces.IdLabelDao;
 import org.scub.foundation.incubator.framework.core.implementations.model.IdLabelModel;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.query.HqlQuery;

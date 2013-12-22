@@ -11,8 +11,6 @@
 		<config>conf/common/resources/rmiServiceExporterContext.xml</config>
 		<config>conf/common/resources/rmiServiceImporterContext.xml</config>
 		<config>conf/common/resources/securiteServiceContext.xml</config>
-		<config>conf/test/resources/rmiServiceImporterMockContext.xml</config>
-		<config>conf/test/resources/securiteServiceSpecContext.xml</config>
 	</configs>
 	<configSets>
 		<configSet>
@@ -61,8 +59,6 @@
 			<configs>
 				<config>conf/common/resources/applicationContext.xml</config>
 				<config>conf/common/resources/securiteServiceContext.xml</config>
-				<config>conf/test/resources/rmiServiceImporterMockContext.xml</config>
-				<config>conf/test/resources/securiteServiceSpecContext.xml</config>
 			</configs>
 			<profiles>
 			</profiles>
