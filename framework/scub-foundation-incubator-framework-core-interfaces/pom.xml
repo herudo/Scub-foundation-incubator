@@ -8,7 +8,7 @@
    <parent>
 		  <groupId>scub-foundation.base.superpom</groupId>
 		  <artifactId>scub-foundation-superpom-core-interfaces</artifactId>
-		  <version>4.0</version>
+		  <version>4.1</version>
   </parent>
   
    <build>

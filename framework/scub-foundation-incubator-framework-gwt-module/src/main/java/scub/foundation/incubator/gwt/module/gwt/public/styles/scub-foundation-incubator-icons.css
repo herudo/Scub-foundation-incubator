@@ -1,0 +1,50 @@
+/************************** string operators. ****************************/
+.icon-incubator-equals {
+	background-position-y: 0;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-different {
+	background-position-y: -20;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-starts-with {
+	background-position-y: -40;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-ends-width {
+	background-position-y: -60;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-contains {
+	background-position-y: -80;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-is-null {
+	background-position-y: -100;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-not-starts-with {
+	background-position-y: -120;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-not-ends-with {
+	background-position-y: -140;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-not-contains {
+	background-position-y: -160;
+	background-image: url('../images/string-operator-icon.png');
+}
+
+.icon-incubator-is-not-null {
+	background-position-y: -180;
+	background-image: url('../images/string-operator-icon.png');
+}

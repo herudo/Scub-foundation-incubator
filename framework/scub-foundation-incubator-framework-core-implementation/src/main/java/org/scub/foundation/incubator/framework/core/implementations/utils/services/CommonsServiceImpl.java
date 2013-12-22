@@ -1,7 +1,7 @@
 package org.scub.foundation.incubator.framework.core.implementations.utils.services;
 
+import org.scub.foundation.framework.base.mapping.util.MapperDozerBean;
 import org.scub.foundation.framework.core.oval.validator.BusinessValidator;
-import org.scub.foundation.incubator.framework.base.utils.mapper.MapperDozerBean;
 import org.scub.foundation.incubator.framework.core.implementations.utils.IntegrityValidator;
 import org.scub.foundation.incubator.framework.core.implementations.utils.TechnicalValidator;
 

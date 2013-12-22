@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="gwtClient">
+	<!-- Inherit the core Scub Foundation Web Toolkit stuff. -->
+	<inherits name="org.scub.foundation.framework.gwt.module.ScubFoundationModule"/>
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='scub.foundation.incubator.gwt.module.gwt.client.ClientEntryPointGwt'/>
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+
+	<stylesheet src="styles/scub-foundation-incubator.css" />
+	<stylesheet src="styles/scub-foundation-incubator-icons.css" />
+</module>
