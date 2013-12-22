@@ -6,6 +6,8 @@ package org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriter
  */
 public class StringSearchCriterionDto extends AbstractSearchCriterionDto<String, StringSearchCriterionDto.StringOperator> {
 
+    private static final long serialVersionUID = -2218618831598033492L;
+
     private boolean caseSensitive;
 
     /**
