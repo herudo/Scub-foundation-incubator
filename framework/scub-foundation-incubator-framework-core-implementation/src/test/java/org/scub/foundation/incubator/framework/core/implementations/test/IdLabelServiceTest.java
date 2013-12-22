@@ -3,7 +3,6 @@ package org.scub.foundation.incubator.framework.core.implementations.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.IdentifierLoadAccess;
 import org.junit.Before;
 import org.junit.Test;
 import org.scub.foundation.framework.base.exception.BusinessException;
@@ -40,11 +39,6 @@ public class IdLabelServiceTest extends AbstractDbunitBaseTestCase {
         attributesMappingService = (AttributesMappingService) getBeanSpring("attributesMappingService");
     }
 
-    /**
-     * Recuperer une liste de fichiers suplémentaire de contexte spring. Vous pouvez redefinir cette methode dans chaque test pour une liste de fichiers de
-     * configuration supplémentaire.
-     * @return un tableau avec le nom de chaque fichier disponible dans le classPath de l'application.
-     */
     @Override
     public List<String> getContextFiles() {
         final List<String> contextFiles = new ArrayList<String>();
