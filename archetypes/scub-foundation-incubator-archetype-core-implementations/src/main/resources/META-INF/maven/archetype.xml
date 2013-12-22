@@ -1,0 +1,60 @@
+<archetype>
+  <id>scub-foundation-archetype-core-implementations</id>
+   <resources>
+		<filtering>false</filtering>
+  		
+  		<resource>.springBeans</resource>
+    	<resource>.checkstyle</resource>
+    	<resource>.project</resource>
+  		
+  		<!-- SCR/MAIN/RESOURCES -->
+  		<resource>src/main/resources/message_fr_FR.properties</resource>
+  		<resource>src/main/resources/messageError_fr_FR.properties</resource>
+  		
+  		<!-- SRC/TEST/RESOURCES -->
+  		<resource>src/test/resources/testresources.properties</resource>
+  		
+  		<!-- ENV COMMUN -->
+  		<resource>conf/common/filters/filters.properties</resource>
+  		<resource>conf/common/resources/applicationContext.xml</resource>
+  		<resource>conf/common/resources/rmiServiceImporterContext.xml</resource>
+  		<resource>conf/common/resources/rmiServiceExporterContext.xml</resource>
+  		<resource>conf/common/resources/securiteServiceContext.xml</resource>
+  		<resource>conf/common/WEB-INF/web.xml</resource>
+  		<resource>conf/common/resources/dozer-bean-mappings.xml</resource>
+  		<resource>conf/common/resources/dozer.properties</resource>
+  		
+  		<!-- ENV DEV -->
+  		<resource>conf/dev/filters/filters.properties</resource>
+  		<resource>conf/dev/resources/rmiServiceImporterSpecContext.xml</resource>
+  		<resource>conf/dev/resources/securiteServiceSpecContext.xml</resource>
+  		<resource>conf/dev/resources/log4j.properties</resource>
+  		<resource>conf/dev/resources/init-db.sql</resource>
+  		<resource>conf/dev/WEB-INF/jetty-web.xml</resource>
+  		
+  		 <!-- ENV PROD-TEST -->
+  		<resource>conf/prod-test/filters/filters.properties</resource>
+  		<resource>conf/prod-test/resources/rmiServiceImporterSpecContext.xml</resource>
+  		<resource>conf/prod-test/resources/securiteServiceSpecContext.xml</resource>
+  		<resource>conf/prod-test/resources/log4j.properties</resource>
+  		<resource>conf/prod-test/resources/init-db.sql</resource>
+  		<resource>conf/prod-test/WEB-INF/jetty-web.xml</resource>
+  		
+  		 <!-- ENV PROD -->
+  		<resource>conf/prod/filters/filters.properties</resource>
+  		<resource>conf/prod/resources/rmiServiceImporterSpecContext.xml</resource>
+  		<resource>conf/prod/resources/securiteServiceSpecContext.xml</resource>
+  		<resource>conf/prod/resources/log4j.properties</resource>
+  		<resource>conf/prod/resources/init-db.sql</resource>
+  		<resource>conf/prod/WEB-INF/jetty-web.xml</resource>
+  		
+  		<!-- ENV TEST -->
+  		<resource>conf/test/filters/filters.properties</resource>
+  		<resource>conf/test/resources/dataset.xml</resource>
+  		<resource>conf/test/resources/database.dtd</resource>
+  		<resource>conf/test/resources/log4j.properties</resource>
+  		<resource>conf/test/resources/rmiServiceImporterMockContext.xml</resource>
+  		<resource>conf/test/resources/securiteServiceSpecContext.xml</resource>
+  		
+  </resources>
+</archetype>

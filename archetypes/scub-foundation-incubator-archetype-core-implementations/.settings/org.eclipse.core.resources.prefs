@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/archetype-resources/src/main/resources/messageError_fr_FR.properties=UTF-8
+encoding//src/main/resources/archetype-resources/src/main/resources/message_fr_FR.properties=UTF-8
+encoding//src/main/resources/archetype-resources/src/test/resources/testresources.properties=UTF-8
+encoding/<project>=UTF-8
