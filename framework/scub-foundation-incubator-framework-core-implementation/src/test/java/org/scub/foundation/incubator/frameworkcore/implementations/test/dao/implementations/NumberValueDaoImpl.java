@@ -6,6 +6,8 @@ import org.scub.foundation.incubator.framework.core.implementations.dao.implemen
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.query.HqlQuery;
 import org.scub.foundation.incubator.framework.core.implementations.test.dao.interfaces.NumberValueDao;
 import org.scub.foundation.incubator.framework.core.implementations.test.model.NumberValue;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DoubleSearchCriterionDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.FloatSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.IntegerSearchCriterionDto;
 
 /**
@@ -32,6 +34,22 @@ public class NumberValueDaoImpl extends HibernateDaoBaseImplementation implement
     public List<NumberValue> getIntegerValues(IntegerSearchCriterionDto searchCriterion) {
         final HqlQuery hqlQuery = getHqlQuery();
         hqlQuery.addSearchCriterion(searchCriterion, "intValue", "intValue");
+        return createQuery(hqlQuery).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<NumberValue> getDoubleValues(DoubleSearchCriterionDto searchCriterion) {
+        final HqlQuery hqlQuery = getHqlQuery();
+        hqlQuery.addSearchCriterion(searchCriterion, "doubleValue", "doubleValue");
+        return createQuery(hqlQuery).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<NumberValue> getFloatValues(FloatSearchCriterionDto searchCriterion) {
+        final HqlQuery hqlQuery = getHqlQuery();
+        hqlQuery.addSearchCriterion(searchCriterion, "floatValue", "floatValue");
         return createQuery(hqlQuery).list();
     }
 }
