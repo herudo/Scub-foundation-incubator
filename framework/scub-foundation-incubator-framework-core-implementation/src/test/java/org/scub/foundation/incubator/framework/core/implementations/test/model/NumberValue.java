@@ -104,7 +104,6 @@ public class NumberValue extends BaseModel {
     public void setLongValue(Long longValue) {
         this.longValue = longValue;
     }
-
     /**
      * Get the value of shortValue.
      * @return the shortValue
