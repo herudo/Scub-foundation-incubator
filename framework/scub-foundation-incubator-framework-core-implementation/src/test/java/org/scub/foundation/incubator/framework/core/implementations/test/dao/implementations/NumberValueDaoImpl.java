@@ -2,7 +2,6 @@ package org.scub.foundation.incubator.framework.core.implementations.test.dao.im
 
 import java.util.List;
 
-import org.hibernate.Query;
 import org.scub.foundation.incubator.framework.core.implementations.dao.implementations.HibernateDaoBaseImplementation;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.query.HqlQuery;
 import org.scub.foundation.incubator.framework.core.implementations.test.dao.interfaces.NumberValueDao;
@@ -10,6 +9,7 @@ import org.scub.foundation.incubator.framework.core.implementations.test.model.N
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DoubleSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.FloatSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.IntegerSearchCriterionDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.LongSearchCriterionDto;
 
 /**
  * Dao Implementation for number query.
@@ -51,7 +51,14 @@ public class NumberValueDaoImpl extends HibernateDaoBaseImplementation implement
     public List<NumberValue> getFloatValues(FloatSearchCriterionDto searchCriterion) {
         final HqlQuery hqlQuery = getHqlQuery();
         hqlQuery.addSearchCriterion(searchCriterion, "floatValue", "floatValue");
-         Query criteria = createQuery(hqlQuery);
+        return createQuery(hqlQuery).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<NumberValue> getLongValues(LongSearchCriterionDto searchCriterion) {
+        final HqlQuery hqlQuery = getHqlQuery();
+        hqlQuery.addSearchCriterion(searchCriterion, "longValue", "longValue");
         return createQuery(hqlQuery).list();
     }
 }
