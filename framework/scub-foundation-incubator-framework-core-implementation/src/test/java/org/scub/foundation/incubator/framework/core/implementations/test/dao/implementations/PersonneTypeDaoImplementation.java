@@ -1,4 +1,4 @@
-package org.scub.foundation.incubator.frameworkcore.implementations.test.dao.implementations;
+package org.scub.foundation.incubator.framework.core.implementations.test.dao.implementations;
 
 import org.scub.foundation.incubator.framework.core.implementations.dao.implementations.AbstractIdLabelDaoImplementation;
 import org.scub.foundation.incubator.framework.core.implementations.test.dao.interfaces.PersonneTypeDao;

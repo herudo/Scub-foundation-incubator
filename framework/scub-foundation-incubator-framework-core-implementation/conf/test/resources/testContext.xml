@@ -105,8 +105,12 @@
 	*
 	* <bean id="messageDao" class="org.scub.foundation.applicationblanche.noyau.dao.implementations.MessageDaoImplementation" autowire="byName"/>
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+	<bean id="numberValueDao"
+		class="org.scub.foundation.incubator.framework.core.implementations.test.dao.implementations.NumberValueDaoImpl"
+		autowire="byName" />
+
 	<bean id="personneTypeDao"
-		class="org.scub.foundation.incubator.frameworkcore.implementations.test.dao.implementations.PersonneTypeDaoImplementation"
+		class="org.scub.foundation.incubator.framework.core.implementations.test.dao.implementations.PersonneTypeDaoImplementation"
 		autowire="byName" />
 
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * SERVICES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -145,7 +149,7 @@
 
 	<aop:config>
 		<aop:pointcut id="transactionPointcut"
-			expression="execution(* org.scub.foundation.incubator.framework.core.implementations.test.services.interfaces..*.*(..))" />
+			expression="execution(* org.scub.foundation.incubator.framework.core.implementations.test.*.interfaces..*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointcut" />
 
 		<aop:aspect id="monitorAspect" ref="monitor">

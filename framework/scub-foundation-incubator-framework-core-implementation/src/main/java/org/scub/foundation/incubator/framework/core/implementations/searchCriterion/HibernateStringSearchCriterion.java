@@ -77,6 +77,12 @@ public class HibernateStringSearchCriterion
                 case NOT_CONTAINS:
                     conditionValue = PERCENT + conditionValue + PERCENT;
                     break;
+                case IS_NULL:
+                    //nothings to do
+                    break;
+                case IS_NOT_NULL:
+                    //nothings to do
+                    break;
                 default:
                     logger.fatal("Unknown operator.");
                     break;
@@ -99,7 +105,8 @@ public class HibernateStringSearchCriterion
      * @param columnName the base column name to use.
      * @return the correct columne name
      */
-    private String getHqlColumnName(String columnName) {
+    @Override
+    protected String getHqlColumnName(String columnName) {
         if (searchCriterion != null) {
             if (!searchCriterion.getOperator().equals(StringOperator.IS_NULL) && !searchCriterion.getOperator().equals(StringOperator.IS_NOT_NULL)) {
                 if (!searchCriterion.isCaseSensitive()) {
@@ -107,7 +114,7 @@ public class HibernateStringSearchCriterion
                 }
             }
         }
-        return SPACE + columnName + SPACE;
+        return super.getHqlColumnName(columnName);
     }
 
     /**

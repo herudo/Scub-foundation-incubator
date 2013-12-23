@@ -39,6 +39,12 @@ public abstract class AbstractHibernateSearchCriterion<C extends AbstractSearchC
     /** the is not null operator. */
     protected static final String IS_NOT_NULL = "IS NOT NULL";
 
+    /** the AND operator. */
+    protected static final String AND = "AND";
+
+    /** the OR operator. */
+    protected static final String OR = "OR";
+
     /**
      * Constructor.
      * @param searchCriterion the search criterion.
@@ -59,6 +65,15 @@ public abstract class AbstractHibernateSearchCriterion<C extends AbstractSearchC
      * @param query The hibernate query
      */
     public abstract void setConditionValue(Query query);
+
+    /**
+     * get the hql columnName.
+     * @param columnName the base column name to use.
+     * @return the correct columne name
+     */
+    protected String getHqlColumnName(String columnName) {
+        return SPACE + columnName + SPACE;
+    }
 
     /**
      * Process basic validations for a search criterion.

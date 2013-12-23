@@ -6,7 +6,13 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.AbstractHibernateSearchCriterion;
+import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateDoubleSearchCriterion;
+import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateFloatSearchCriterion;
+import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateIntegerSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateStringSearchCriterion;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DoubleSearchCriterionDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.FloatSearchCriterionDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.IntegerSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.StringSearchCriterionDto;
 
 /**
@@ -82,13 +88,25 @@ public class HqlQuery {
      * @param parameterName the parameter name.
      */
     public void addSearchCriterion(AbstractHibernateSearchCriterion<?, ?, ?> searchCriterion, String columnName, String parameterName) {
+        if (searchCriterion != null) {
+            searchCriterion.setHqlParameterName(parameterName);
+            searchCriterion.constructHQLCondition(hqlQuery, columnName);
+            addSearchCriterion(searchCriterion);
+        } else {
+            logger.warn("The given search criterion is null.");
+        }
+    }
+
+    /**
+     * Add a search criterion in where clause.
+     * @param searchCriterion the search criterion
+     */
+    public void addSearchCriterion(AbstractHibernateSearchCriterion<?, ?, ?> searchCriterion) {
         if (searchCriterions == null) {
             searchCriterions = new ArrayList<>();
         }
         if (searchCriterion != null) {
-            searchCriterion.setHqlParameterName(parameterName);
             searchCriterions.add(searchCriterion);
-            searchCriterion.constructHQLCondition(hqlQuery, columnName);
         } else {
             logger.warn("The given search criterion is null.");
         }
@@ -100,18 +118,38 @@ public class HqlQuery {
      * @param columnName the column name
      * @param parameterName the parameter name.
      */
-    public void addStringSearchCriterion(HibernateStringSearchCriterion searchCriterion, String columnName, String parameterName) {
-        addSearchCriterion(searchCriterion, columnName, parameterName);
+    public void addSearchCriterion(StringSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateStringSearchCriterion(searchCriterion), columnName, parameterName);
     }
 
     /**
-     * Add a string search criterion in where clause.
+     * Add an integer search criterion in where clause.
      * @param searchCriterion the string search criterion
      * @param columnName the column name
      * @param parameterName the parameter name.
      */
-    public void addStringSearchCriterion(StringSearchCriterionDto searchCriterion, String columnName, String parameterName) {
-        addSearchCriterion(new HibernateStringSearchCriterion(searchCriterion), columnName, parameterName);
+    public void addSearchCriterion(IntegerSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateIntegerSearchCriterion(searchCriterion), columnName, parameterName);
+    }
+
+    /**
+     * Add a double search criterion in where clause.
+     * @param searchCriterion the string search criterion
+     * @param columnName the column name
+     * @param parameterName the parameter name.
+     */
+    public void addSearchCriterion(DoubleSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateDoubleSearchCriterion(searchCriterion), columnName, parameterName);
+    }
+
+    /**
+     * Add a float search criterion in where clause.
+     * @param searchCriterion the string search criterion
+     * @param columnName the column name
+     * @param parameterName the parameter name.
+     */
+    public void addSearchCriterion(FloatSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateFloatSearchCriterion(searchCriterion), columnName, parameterName);
     }
 
     /**

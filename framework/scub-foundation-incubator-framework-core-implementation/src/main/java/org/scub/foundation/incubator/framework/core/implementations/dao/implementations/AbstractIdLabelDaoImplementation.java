@@ -26,7 +26,7 @@ public abstract class AbstractIdLabelDaoImplementation<ModelType extends IdLabel
         hqlQuery.append("FROM " + getClassType().getSimpleName() + " idLabel ");
         if (filter != null) {
             hqlQuery.append("WHERE ");
-            hqlQuery.addStringSearchCriterion(filter, "label", "label");
+            hqlQuery.addSearchCriterion(filter, "label", "label");
         }
 
         return createQuery(hqlQuery).list();
@@ -65,7 +65,7 @@ public abstract class AbstractIdLabelDaoImplementation<ModelType extends IdLabel
         hqlQuery.append("FROM " + getClassType().getSimpleName() + " idLabel ");
         if (criteria != null && criteria.getLabel() != null) {
             hqlQuery.append("WHERE ");
-            hqlQuery.addStringSearchCriterion(criteria.getLabel(), "label", "label");
+            hqlQuery.addSearchCriterion(criteria.getLabel(), "label", "label");
         }
         return hqlQuery;
     }

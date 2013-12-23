@@ -1,5 +1,7 @@
 package org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions;
 
+import java.io.Serializable;
+
 /**
  * Based class for search criterion. A search criterion is a set of property that represent a criterion for a search. it's give for example a value and an
  * operator for the search.
@@ -7,7 +9,9 @@ package org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriter
  * @param <T> the value type
  * @author Adrien HAUTOT (contact@adrienhautot.fr)
  */
-public abstract class AbstractSearchCriterionDto<T, O> {
+public abstract class AbstractSearchCriterionDto<T, O> implements Serializable {
+
+    private static final long serialVersionUID = -604237118194859912L;
 
     /** The operator. */
     protected O operator;
@@ -29,6 +33,14 @@ public abstract class AbstractSearchCriterionDto<T, O> {
     public AbstractSearchCriterionDto(O operator, T value) {
         this.operator = operator;
         this.value = value;
+    }
+
+    /**
+     * Constructor.
+     * @param operator the operator
+     */
+    public AbstractSearchCriterionDto(O operator) {
+        this.operator = operator;
     }
 
     /**
