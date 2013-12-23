@@ -22,8 +22,14 @@ public class NumberValue extends BaseModel {
     @Column(name = "DOUBLE_VALUE")
     private Double doubleValue;
 
-    @Column(name = "FLOAT_VALUE", columnDefinition = "float")
+    @Column(name = "FLOAT_VALUE")
     private Float floatValue;
+
+    @Column(name = "LONG_VALUE")
+    private Long longValue;
+
+    @Column(name = "SHORT_VALUE")
+    private Short shortValue;
 
     @Override
     public int hashCode() {
@@ -81,5 +87,37 @@ public class NumberValue extends BaseModel {
      */
     public void setFloatValue(Float floatValue) {
         this.floatValue = floatValue;
+    }
+
+    /**
+     * Get the value of longValue.
+     * @return the longValue
+     */
+    public Long getLongValue() {
+        return longValue;
+    }
+
+    /**
+     * Set the value of longValue.
+     * @param longValue the longValue to set
+     */
+    public void setLongValue(Long longValue) {
+        this.longValue = longValue;
+    }
+
+    /**
+     * Get the value of shortValue.
+     * @return the shortValue
+     */
+    public Short getShortValue() {
+        return shortValue;
+    }
+
+    /**
+     * Set the value of shortValue.
+     * @param shortValue the shortValue to set
+     */
+    public void setShortValue(Short shortValue) {
+        this.shortValue = shortValue;
     }
 }

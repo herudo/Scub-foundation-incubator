@@ -9,10 +9,14 @@ import org.scub.foundation.incubator.framework.core.implementations.searchCriter
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateDoubleSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateFloatSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateIntegerSearchCriterion;
+import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateLongSearchCriterion;
+import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateShortSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateStringSearchCriterion;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DoubleSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.FloatSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.IntegerSearchCriterionDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.LongSearchCriterionDto;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.ShortSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.StringSearchCriterionDto;
 
 /**
@@ -143,6 +147,16 @@ public class HqlQuery {
     }
 
     /**
+     * Add a long search criterion in where clause.
+     * @param searchCriterion the string search criterion
+     * @param columnName the column name
+     * @param parameterName the parameter name.
+     */
+    public void addSearchCriterion(LongSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateLongSearchCriterion(searchCriterion), columnName, parameterName);
+    }
+
+    /**
      * Add a float search criterion in where clause.
      * @param searchCriterion the string search criterion
      * @param columnName the column name
@@ -150,6 +164,16 @@ public class HqlQuery {
      */
     public void addSearchCriterion(FloatSearchCriterionDto searchCriterion, String columnName, String parameterName) {
         addSearchCriterion(new HibernateFloatSearchCriterion(searchCriterion), columnName, parameterName);
+    }
+
+    /**
+     * Add a short search criterion in where clause.
+     * @param searchCriterion the string search criterion
+     * @param columnName the column name
+     * @param parameterName the parameter name.
+     */
+    public void addSearchCriterion(ShortSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateShortSearchCriterion(searchCriterion), columnName, parameterName);
     }
 
     /**
