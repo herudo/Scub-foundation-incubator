@@ -82,5 +82,4 @@ public class NumberValue extends BaseModel {
     public void setFloatValue(Float floatValue) {
         this.floatValue = floatValue;
     }
-
 }

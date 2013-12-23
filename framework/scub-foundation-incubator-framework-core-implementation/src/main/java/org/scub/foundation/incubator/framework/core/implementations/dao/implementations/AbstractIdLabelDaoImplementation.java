@@ -69,5 +69,4 @@ public abstract class AbstractIdLabelDaoImplementation<ModelType extends IdLabel
         }
         return hqlQuery;
     }
-
 }
