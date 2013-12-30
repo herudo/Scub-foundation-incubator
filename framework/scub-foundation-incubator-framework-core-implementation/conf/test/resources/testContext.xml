@@ -113,6 +113,10 @@
 		class="org.scub.foundation.incubator.framework.core.implementations.test.dao.implementations.PersonneTypeDaoImplementation"
 		autowire="byName" />
 
+	<bean id="dateValueDao"
+		class="org.scub.foundation.incubator.framework.core.implementations.test.dao.implementations.DateValueDaoImpl"
+		autowire="byName" />
+
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * SERVICES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*
 	* Déclaration des Services de l'application.

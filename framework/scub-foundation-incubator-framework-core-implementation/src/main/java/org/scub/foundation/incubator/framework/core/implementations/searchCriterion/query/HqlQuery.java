@@ -6,12 +6,14 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.AbstractHibernateSearchCriterion;
+import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateDateSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateDoubleSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateFloatSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateIntegerSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateLongSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateShortSearchCriterion;
 import org.scub.foundation.incubator.framework.core.implementations.searchCriterion.HibernateStringSearchCriterion;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DateSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DoubleSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.FloatSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.IntegerSearchCriterionDto;
@@ -164,6 +166,16 @@ public class HqlQuery {
      */
     public void addSearchCriterion(FloatSearchCriterionDto searchCriterion, String columnName, String parameterName) {
         addSearchCriterion(new HibernateFloatSearchCriterion(searchCriterion), columnName, parameterName);
+    }
+
+    /**
+     * Add a date search criterion in where clause.
+     * @param searchCriterion the string search criterion
+     * @param columnName the column name
+     * @param parameterName the parameter name.
+     */
+    public void addSearchCriterion(DateSearchCriterionDto searchCriterion, String columnName, String parameterName) {
+        addSearchCriterion(new HibernateDateSearchCriterion(searchCriterion), columnName, parameterName);
     }
 
     /**
