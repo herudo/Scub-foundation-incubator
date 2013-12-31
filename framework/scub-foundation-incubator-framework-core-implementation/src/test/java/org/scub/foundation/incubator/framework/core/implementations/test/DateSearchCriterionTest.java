@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.scub.foundation.incubator.framework.core.implementations.test.dao.interfaces.DateValueDao;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DateSearchCriterionDto;
 import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DateSearchCriterionDto.DateOperator;
+import org.scub.foundation.incubator.framework.core.interfaces.dto.searchCriterions.DateSearchCriterionValueDto;
 import org.scub.foundation.incubator.framework.test.abstractCase.AbstractDbunitBaseTestCase;
 
 /**
@@ -49,7 +50,7 @@ public class DateSearchCriterionTest extends AbstractDbunitBaseTestCase {
     /** test differents. */
     @Test
     public void testDifferents() {
-        assertSizeEquals(6, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.DIFFERENTS, getFirstDate())));
+        assertSizeEquals(9, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.DIFFERENTS, getFirstDate())));
     }
 
     /** test is null. */
@@ -61,55 +62,146 @@ public class DateSearchCriterionTest extends AbstractDbunitBaseTestCase {
     /** test is not null. */
     @Test
     public void testIsNotNull() {
-        assertSizeEquals(7, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.IS_NOT_NULL)));
+        assertSizeEquals(10, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.IS_NOT_NULL)));
     }
 
     /** test is greater than or equals. */
     @Test
     public void testGreaterThanOrEquals() {
-        assertSizeEquals(3, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.GREATER_THAN_OR_EQUAL, getSecondDate())));
+        assertSizeEquals(4, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.GREATER_THAN_OR_EQUAL, getSecondDate())));
     }
 
     /** test is greater than. */
     @Test
     public void testGreaterThans() {
-        assertSizeEquals(2, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.GREATER_THAN, getSecondDate())));
+        assertSizeEquals(3, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.GREATER_THAN, getSecondDate())));
     }
 
     /** test is less than or equals. */
     @Test
     public void testLessThanOrEquals() {
-        assertSizeEquals(5, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.LESS_THAN_OR_EQUAL, getSecondDate())));
+        assertSizeEquals(7, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.LESS_THAN_OR_EQUAL, getSecondDate())));
     }
 
     /** test is less than. */
     @Test
     public void testLessThans() {
-        assertSizeEquals(4, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.LESS_THAN, getSecondDate())));
+        assertSizeEquals(6, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.LESS_THAN, getSecondDate())));
     }
 
     /** test is between. */
     @Test
     public void testBetween() {
-        assertSizeEquals(4, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.BETWEEN, getFirstDate(), getThirdDate())));
+        assertSizeEquals(6, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.BETWEEN, getFirstDate(), getThirdDate())));
     }
 
     /** test is not between. */
     @Test
     public void testNotBetween() {
-        assertSizeEquals(5, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.NOT_BETWEEN, getFirstDate(), getThirdDate())));
+        assertSizeEquals(6, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.NOT_BETWEEN, getFirstDate(), getThirdDate())));
     }
 
     /** test is strictly between. */
     @Test
     public void testStrictlyBetween() {
-        assertSizeEquals(2, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.STRICTLY_BETWEEN, getFirstDate(), getThirdDate())));
+        assertSizeEquals(4, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.STRICTLY_BETWEEN, getFirstDate(), getThirdDate())));
     }
 
     /** test is strictly not between. */
     @Test
     public void testStrictlyNotBetween() {
-        assertSizeEquals(3, dateValueDao.getDateValues(new DateSearchCriterionDto(DateOperator.STRICTLY_NOT_BETWEEN, getFirstDate(), getThirdDate())));
+        assertSizeEquals(3, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.STRICTLY_NOT_BETWEEN, getFirstDate(), getThirdDate())));
+    }
+
+    /** test equals ignore time. */
+    @Test
+    public void testEqualsIgnoreTime() {
+        assertSizeEquals(2, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.EQUALS, getFirstDate(), null)));
+    }
+
+    /** test differents ignore time. */
+    @Test
+    public void testDifferentsIgnoreTime() {
+        assertSizeEquals(8, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.DIFFERENTS, getFirstDate(), null)));
+    }
+
+    /** test is null ignore time. */
+    @Test
+    public void testIsNullIgnoreTime() {
+        assertSizeEquals(1, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.IS_NULL, null, null)));
+    }
+
+    /** test is not null ignore time. */
+    @Test
+    public void testIsNotNullIgnoreTime() {
+        assertSizeEquals(10, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.IS_NOT_NULL, null, null)));
+    }
+
+    /** test is greater than or equals ignore time. */
+    @Test
+    public void testGreaterThanOrEqualsIgnoreTime() {
+        assertSizeEquals(4, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.GREATER_THAN_OR_EQUAL, getSecondDate(), null)));
+    }
+
+    /** test is greater than ignore time. */
+    @Test
+    public void testGreaterThansIgnoreTime() {
+        assertSizeEquals(3, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.GREATER_THAN, getSecondDate(), null)));
+    }
+
+    /** test is less than or equals ignore time. */
+    @Test
+    public void testLessThanOrEqualsIgnoreTime() {
+        assertSizeEquals(7, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.LESS_THAN_OR_EQUAL, getSecondDate(), null)));
+    }
+
+    /** test is less than ignore time. */
+    @Test
+    public void testLessThansIgnoreTime() {
+        assertSizeEquals(6, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.LESS_THAN, getSecondDate(), null)));
+    }
+
+    /** test is between ignore time. */
+    @Test
+    public void testBetweenIgnoreTime() {
+        assertSizeEquals(7, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.BETWEEN, getFirstDate(), getThirdDate())));
+    }
+
+    /** test is not between ignore time. */
+    @Test
+    public void testNotBetweenIgnoreTime() {
+        assertSizeEquals(4, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.NOT_BETWEEN, getFirstDate(), getThirdDate())));
+    }
+
+    /** test is strictly between ignore time. */
+    @Test
+    public void testStrictlyBetweenIgnoreTime() {
+        assertSizeEquals(3, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.STRICTLY_BETWEEN, getFirstDate(), getThirdDate())));
+    }
+
+    /** test is strictly not between ignore time. */
+    @Test
+    public void testStrictlyNotBetweenIgnoreTime() {
+        assertSizeEquals(3, dateValueDao.getDateValues(getCriterionIgnoreTime(DateOperator.STRICTLY_NOT_BETWEEN, getFirstDate(), getThirdDate())));
+    }
+
+    /**
+     * get a search criterion for ignore time tests.
+     * @param operator the operator.
+     * @param firstDate the first date
+     * @param secondDate the second date.
+     * @return the search criterion
+     */
+    private DateSearchCriterionDto getCriterionIgnoreTime(DateOperator operator, Date firstDate, Date secondDate) {
+        final DateSearchCriterionDto searchCriterion = new DateSearchCriterionDto(operator);
+        if (firstDate != null) {
+            searchCriterion.setValue(new DateSearchCriterionValueDto(firstDate, true));
+        }
+        if (firstDate != null) {
+            searchCriterion.setSecondValue(new DateSearchCriterionValueDto(secondDate, true));
+        }
+
+        return searchCriterion;
     }
 
     private Date getFirstDate() {

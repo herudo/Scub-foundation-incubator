@@ -15,7 +15,7 @@ public class DateSearchCriterionValueDto implements Serializable {
     private Date value;
 
     /** used to make search whith hours or not. */
-    private boolean ignoreHours = false;
+    private boolean ignoreTime = false;
 
     /**
      * Constructor.
@@ -28,12 +28,12 @@ public class DateSearchCriterionValueDto implements Serializable {
     /**
      * Constructor.
      * @param value the value
-     * @param ignoreHours search with hours or not.
+     * @param ignoreTime search with hours or not.
      */
-    public DateSearchCriterionValueDto(Date value, boolean ignoreHours) {
+    public DateSearchCriterionValueDto(Date value, boolean ignoreTime) {
         super();
         this.value = value;
-        this.ignoreHours = ignoreHours;
+        this.ignoreTime = ignoreTime;
     }
 
     /**
@@ -50,14 +50,14 @@ public class DateSearchCriterionValueDto implements Serializable {
     /**
      * Constructor.
      * @param value the value
-     * @param ignoreHours search with hours or not.
+     * @param ignoreTime search with hours or not.
      */
-    public DateSearchCriterionValueDto(Calendar value, boolean ignoreHours) {
+    public DateSearchCriterionValueDto(Calendar value, boolean ignoreTime) {
         super();
         if (value != null) {
             this.value = value.getTime();
         }
-        this.ignoreHours = ignoreHours;
+        this.ignoreTime = ignoreTime;
     }
 
     /**
@@ -77,23 +77,23 @@ public class DateSearchCriterionValueDto implements Serializable {
     }
 
     /**
-     * Get the value of ignoreHours.
-     * @return the ignoreHours
+     * Get the value of ignoreTime.
+     * @return the ignoreTime
      */
-    public boolean isIgnoreHours() {
-        return ignoreHours;
+    public boolean isIgnoreTime() {
+        return ignoreTime;
     }
 
     /**
-     * Set the value of ignoreHours.
-     * @param ignoreHours the ignoreHours to set
+     * Set the value of ignoreTime.
+     * @param ignoreTime the ignoreTime to set
      */
-    public void setIgnoreHours(boolean ignoreHours) {
-        this.ignoreHours = ignoreHours;
+    public void setIgnoreTime(boolean ignoreTime) {
+        this.ignoreTime = ignoreTime;
     }
 
     @Override
     public String toString() {
-        return "DateSearchCriterionValueDto [value=" + value + ", ignoreHours=" + ignoreHours + "]";
+        return "DateSearchCriterionValueDto [value=" + value + ", ignoreTime=" + ignoreTime + "]";
     }
 }
