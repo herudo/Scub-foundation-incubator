@@ -1,15 +1,20 @@
 package scub.foundation.incubator.gwt.module.gwt.client.view;
 
+import scub.foundation.incubator.gwt.module.gwt.client.components.remotePaging.HasRemotePagingTableHandlers;
 import scub.foundation.incubator.gwt.module.gwt.client.components.remotePaging.RemotePagingTable;
 import scub.foundation.incubator.gwt.module.gwt.client.factory.AppClientFactory;
+import scub.foundation.incubator.gwt.module.gwt.client.presenter.AbstractSearchPresenter.SearchView;
 
 import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.InputAddOn;
+import com.github.gwtbootstrap.client.ui.Label;
 import com.github.gwtbootstrap.client.ui.base.DivWidget;
 import com.github.gwtbootstrap.client.ui.constants.IconType;
+import com.google.gwt.event.dom.client.HasClickHandlers;
+import com.google.gwt.event.dom.client.HasKeyPressHandlers;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FocusPanel;
-import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -19,7 +24,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  *            attach something.
  * @author Adrien HAUTOT (contact@adrienhautot.fr)
  */
-public abstract class AbstractSearchViewImpl<ResultType, RowHandlerType> extends Composite {
+public abstract class AbstractSearchViewImpl<ResultType, RowHandlerType> extends Composite implements SearchView<ResultType, RowHandlerType> {
 
     /** the search button. */
     protected Button searchBtn;
@@ -77,4 +82,29 @@ public abstract class AbstractSearchViewImpl<ResultType, RowHandlerType> extends
      * @param container the container for search form fields.
      */
     public abstract void initSearchFormFields(FocusPanel container);
+
+    @Override
+    public HasClickHandlers getClearClick() {
+        return clearBtn;
+    }
+
+    @Override
+    public HasKeyPressHandlers getKeyPress() {
+        return searchCriterionContainer;
+    }
+
+    @Override
+    public IsWidget getPrincipalContainer() {
+        return null; // no integrity container here
+    }
+
+    @Override
+    public HasClickHandlers getSearchClick() {
+        return searchBtn;
+    }
+
+    @Override
+    public HasRemotePagingTableHandlers<ResultType, RowHandlerType> getRemotePagingTableHandlers() {
+        return resultsContainer;
+    }
 }

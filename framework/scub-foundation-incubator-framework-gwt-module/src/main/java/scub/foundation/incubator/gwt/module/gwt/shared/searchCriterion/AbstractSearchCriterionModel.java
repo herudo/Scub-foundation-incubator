@@ -5,8 +5,8 @@ import java.io.Serializable;
 /**
  * Based class for search criterion. A search criterion is a set of property that represent a criterion for a search. it's give for example a value and an
  * operator for the search.
- * @param <O> the operator enum type
  * @param <T> the value type
+ * @param <O> the operator enum type
  * @author Adrien HAUTOT (contact@adrienhautot.fr)
  */
 public abstract class AbstractSearchCriterionModel<T, O> implements Serializable {
@@ -33,6 +33,14 @@ public abstract class AbstractSearchCriterionModel<T, O> implements Serializable
     public AbstractSearchCriterionModel(O operator, T value) {
         this.operator = operator;
         this.value = value;
+    }
+
+    /**
+     * Constructor.
+     * @param operator the operator
+     */
+    public AbstractSearchCriterionModel(O operator) {
+        this.operator = operator;
     }
 
     /**

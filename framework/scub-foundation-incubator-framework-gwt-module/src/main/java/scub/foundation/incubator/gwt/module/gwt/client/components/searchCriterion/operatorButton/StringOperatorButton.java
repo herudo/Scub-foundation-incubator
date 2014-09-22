@@ -46,7 +46,7 @@ public class StringOperatorButton extends AbstractOperatorButton<StringOperator>
             new OperatorButtonOption(IconType.STARTS_WITH, messages.startsWithLabel(), messages.startsWithStringDescription()));
         options.put(StringOperator.ENDS_WITH, new OperatorButtonOption(IconType.ENDS_WITH, messages.endsWidthLabel(), messages.endsWidthStringDescription()));
         options.put(StringOperator.CONTAINS, new OperatorButtonOption(IconType.CONTAINS, messages.containsLabel(), messages.containsStringDescription()));
-        options.put(StringOperator.IS_NULL, new OperatorButtonOption(IconType.IS_NULL, messages.isNullLabel(), messages.isNullStringDescription()));
+        options.put(StringOperator.IS_NULL, new OperatorButtonOption(IconType.IS_NULL, messages.isNullLabel(), messages.isNullDescription()));
         options.put(StringOperator.NOT_STARTS_WITH,
             new OperatorButtonOption(IconType.NOT_STARTS_WITH, messages.notStartsWithLabel(), messages.notStartsWithStringDescription()));
         options.put(StringOperator.NOT_ENDS_WITH,
@@ -54,7 +54,7 @@ public class StringOperatorButton extends AbstractOperatorButton<StringOperator>
         options.put(StringOperator.NOT_CONTAINS,
             new OperatorButtonOption(IconType.NOT_CONTAINS, messages.containsLabel(), messages.containsStringDescription()));
         options.put(StringOperator.IS_NOT_NULL,
-            new OperatorButtonOption(IconType.IS_NOT_NULL, messages.isNotNullLabel(), messages.isNotNullStringDescription()));
+            new OperatorButtonOption(IconType.IS_NOT_NULL, messages.isNotNullLabel(), messages.isNotNullDescription()));
         return options;
     }
 }

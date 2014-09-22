@@ -14,20 +14,36 @@ public enum IconType implements Style {
     DIFFERENT("different"),
     /** starts with. */
     STARTS_WITH("starts-with"),
-    /** different. */
+    /** ends width. */
     ENDS_WITH("ends-width"),
-    /** different. */
+    /** not starts with. */
     NOT_STARTS_WITH("not-starts-with"),
-    /** different. */
+    /** not ends with. */
     NOT_ENDS_WITH("not-ends-with"),
-    /** different. */
+    /** contains. */
     CONTAINS("contains"),
-    /** different. */
+    /** not contains. */
     NOT_CONTAINS("not-contains"),
-    /** different. */
+    /** is null. */
     IS_NULL("is-null"),
-    /** different. */
-    IS_NOT_NULL("is-not-null");
+    /** is not null. */
+    IS_NOT_NULL("is-not-null"),
+    /** greater than or equal. */
+    GREATER_THAN_OR_EQUAL("greater-than-or-equal"),
+    /** less than or equal. */
+    LESS_THAN_OR_EQUAL("less-than-or-equal"),
+    /** less than. */
+    LESS_THAN("less-than"),
+    /** greather than. */
+    GREATER_THAN("greather-than"),
+    /** between. */
+    BETWEEN("between"),
+    /** not between. */
+    NOT_BETWEEN("not-between"),
+    /** strictly between. */
+    STRICTLY_BETWEEN("strictly-between"),
+    /** strictly not between. */
+    STRICTLY_NOT_BETWEEN("strictly-not-between");
 
     private static final String PREFIX = "icon-incubator-";
 

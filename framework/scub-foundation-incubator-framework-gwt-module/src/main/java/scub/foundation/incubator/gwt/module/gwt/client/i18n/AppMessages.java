@@ -72,6 +72,46 @@ public interface AppMessages extends Messages {
 
     /* ############################ search criterion ########################### */
 
+    /* ===== Commons operators ===== */
+
+    /**
+     * label for equals operator.
+     * @return the label.
+     */
+    String equalsLabel();
+
+    /**
+     * label for different operator.
+     * @return the label.
+     */
+    String differentLabel();
+
+    /**
+     * label for isNull operator.
+     * @return the label.
+     */
+    String isNullLabel();
+
+    /**
+     * label for isNotNull operator.
+     * @return the label.
+     */
+    String isNotNullLabel();
+
+    /* ===== Commons description ===== */
+
+    /**
+     * description for isNull operator.
+     * @return the description.
+     */
+    String isNullDescription();
+
+    /**
+     * description for isNotNull operator.
+     * @return the description.
+     */
+    String isNotNullDescription();
+
     /* ####### String search criterion ####### */
     /**
      * Description for case sensitive button.
@@ -86,17 +126,6 @@ public interface AppMessages extends Messages {
     String caseInsensitiveDescription();
 
     /* ===== operators ===== */
-    /**
-     * label for equals operator.
-     * @return the label.
-     */
-    String equalsLabel();
-
-    /**
-     * label for different operator.
-     * @return the label.
-     */
-    String differentLabel();
 
     /**
      * label for startsWith operator.
@@ -133,18 +162,6 @@ public interface AppMessages extends Messages {
      * @return the label.
      */
     String notContainsLabel();
-
-    /**
-     * label for isNull operator.
-     * @return the label.
-     */
-    String isNullLabel();
-
-    /**
-     * label for isNotNull operator.
-     * @return the label.
-     */
-    String isNotNullLabel();
 
     /* ===== descriptions ===== */
     /**
@@ -195,15 +212,115 @@ public interface AppMessages extends Messages {
      */
     String notContainsStringDescription();
 
-    /**
-     * description for isNull operator.
-     * @return the description.
-     */
-    String isNullStringDescription();
+    /* ####### Number search criterion ####### */
+    /* ===== operators ===== */
 
     /**
-     * description for isNotNull operator.
+     * label for greatherThanOrEqual operator.
+     * @return the label.
+     */
+    String greatherThanOrEqualLabel();
+
+    /**
+     * label for lessThanOrEqual operator.
+     * @return the label.
+     */
+    String lessThanOrEqualLabel();
+
+    /**
+     * label for greatherThan operator.
+     * @return the label.
+     */
+    String greatherThanLabel();
+
+    /**
+     * label for lessThan operator.
+     * @return the label.
+     */
+    String lessThanLabel();
+
+    /**
+     * label for between operator.
+     * @return the label.
+     */
+    String betweenLabel();
+
+    /**
+     * label for notBetween operator.
+     * @return the label.
+     */
+    String notBetweenLabel();
+
+    /**
+     * label for strictlyNotBbetween operator.
+     * @return the label.
+     */
+    String strictlyNotBetweenLabel();
+
+    /**
+     * label for strictlyBetween operator.
+     * @return the label.
+     */
+    String strictlyBetweenLabel();
+
+    /* ===== descriptions ===== */
+    /**
+     * description for equals operator.
      * @return the description.
      */
-    String isNotNullStringDescription();
+    String equalsNumberDescription();
+
+    /**
+     * description for different operator.
+     * @return the description.
+     */
+    String differentNumberDescription();
+
+    /**
+     * description for greatherThanOrEqual operator.
+     * @return the description.
+     */
+    String greatherThanOrEqualNumberDescription();
+
+    /**
+     * description for lessThanOrEqual operator.
+     * @return the description.
+     */
+    String lessThanOrEqualNumberDescription();
+
+    /**
+     * description for greatherThan operator.
+     * @return the description.
+     */
+    String greatherThanNumberDescription();
+
+    /**
+     * description for lessThan operator.
+     * @return the description.
+     */
+    String lessThanNumberDescription();
+
+    /**
+     * description for between operator.
+     * @return the description.
+     */
+    String betweenNumberDescription();
+
+    /**
+     * description for notBetween operator.
+     * @return the description.
+     */
+    String notBetweenNumberDescription();
+
+    /**
+     * description for strictlyNotBetween operator.
+     * @return the description.
+     */
+    String strictlyNotBetweenNumberDescription();
+
+    /**
+     * description for strictlyBetween operator.
+     * @return the description.
+     */
+    String strictlyBetweenNumberDescription();
 }

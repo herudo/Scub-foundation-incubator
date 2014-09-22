@@ -64,33 +64,8 @@ public class IdLabelSearchViewImpl<ResultType extends IdLabelModel, RowHandlerTy
     }
 
     @Override
-    public HasClickHandlers getSearchClick() {
-        return searchBtn;
-    }
-
-    @Override
-    public HasClickHandlers getClearClick() {
-        return clearBtn;
-    }
-
-    @Override
     public void clearSearch() {
         labelCriterion.clear();
-    }
-
-    @Override
-    public HasRemotePagingTableHandlers<ResultType, RowHandlerType> getRemotePagingTableHandlers() {
-        return resultsContainer;
-    }
-
-    @Override
-    public HasKeyPressHandlers getKeyPress() {
-        return searchCriterionContainer;
-    }
-
-    @Override
-    public IsWidget getPrincipalContainer() {
-        return null; // no integrity container here
     }
 
     @Override

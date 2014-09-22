@@ -5,10 +5,11 @@
 	<artifactId>scub-foundation-incubator-example-core-interfaces</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
+
 	<parent>
 		<groupId>scub-foundation.base.superpom</groupId>
 		<artifactId>scub-foundation-superpom-core-interfaces</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>4.0</version>
 	</parent>
 
 	<build>

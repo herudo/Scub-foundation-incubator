@@ -50,13 +50,13 @@ public interface HasSearchCriterion<SearchCriterionType, SearchCriterionOperator
      * Get the value of defaultOperator.
      * @return the defaultOperator
      */
-    StringOperator getDefaultOperator();
+    SearchCriterionOperatorType getDefaultOperator();
 
     /**
      * Set the value of defaultOperator.
      * @param defaultOperator the defaultOperator to set
      */
-    void setDefaultOperator(StringOperator defaultOperator);
+    void setDefaultOperator(SearchCriterionOperatorType defaultOperator);
 
     /**
      * show/hide the operator.
